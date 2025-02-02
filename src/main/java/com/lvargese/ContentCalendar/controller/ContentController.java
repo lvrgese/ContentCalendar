@@ -2,6 +2,7 @@ package com.lvargese.ContentCalendar.controller;
 
 import com.lvargese.ContentCalendar.model.Content;
 import com.lvargese.ContentCalendar.repository.ContentCollectionRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class ContentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void createContent(@RequestBody Content content){
+    public void createContent(@Valid @RequestBody  Content content){
         repository.saveContent(content);
     }
 

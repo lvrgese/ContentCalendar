@@ -1,6 +1,0 @@
-com\lvargese\ContentCalendar\Application.class
-com\lvargese\ContentCalendar\repository\ContentCollectionRepository.class
-com\lvargese\ContentCalendar\model\Type.class
-com\lvargese\ContentCalendar\controller\ContentController.class
-com\lvargese\ContentCalendar\model\Content.class
-com\lvargese\ContentCalendar\model\Status.class
