@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "cc",
+      "type": "com.lvargese.ContentCalendar.config.ContentCalendarProperties",
+      "sourceType": "com.lvargese.ContentCalendar.config.ContentCalendarProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cc.welcome-message",
+      "type": "java.lang.String",
+      "sourceType": "com.lvargese.ContentCalendar.config.ContentCalendarProperties"
+    }
+  ],
+  "hints": []
+}
