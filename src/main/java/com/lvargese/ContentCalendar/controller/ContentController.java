@@ -2,6 +2,7 @@ package com.lvargese.ContentCalendar.controller;
 
 import com.lvargese.ContentCalendar.model.Content;
 import com.lvargese.ContentCalendar.repository.ContentCollectionRepository;
+import com.lvargese.ContentCalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,10 +17,10 @@ import java.util.Optional;
 @RequestMapping("/api/content")
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
     @Autowired
-    public ContentController(ContentCollectionRepository contentCollectionRepository){
+    public ContentController(ContentRepository contentCollectionRepository){
         this.repository = contentCollectionRepository;
     }
 
@@ -37,14 +38,15 @@ public class ContentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     public void createContent(@Valid @RequestBody  Content content){
-        repository.saveContent(content);
+        repository.save(content);
     }
 
     @PutMapping("/{id}")
     public void updateById(@RequestBody Content content, @PathVariable Integer id)
     {
-        if(! repository.updateContentById(content,id))
+        if(! repository.existsById(id))
             throw new ResponseStatusException(HttpStatus.NO_CONTENT,"Content not there");
+        repository.save(content);
     }
 
     @DeleteMapping("/{id}")
