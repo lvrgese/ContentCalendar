@@ -1,6 +1,7 @@
 package com.lvargese.ContentCalendar.controller;
 
 import com.lvargese.ContentCalendar.model.Content;
+import com.lvargese.ContentCalendar.model.Status;
 import com.lvargese.ContentCalendar.repository.ContentCollectionRepository;
 import com.lvargese.ContentCalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
@@ -52,5 +53,15 @@ public class ContentController {
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Integer id){
         repository.deleteById(id);
+    }
+
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword){
+        return repository.findAllByTitleContains(keyword);
+    }
+
+    @GetMapping("/filter/status/{status}")
+    public List<Content> listByStatus(@PathVariable Status status){
+        return repository.listByStatus(status);
     }
 }
