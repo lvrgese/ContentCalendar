@@ -9,11 +9,11 @@ CREATE TABLE IF NOT EXISTS Content (
     url VARCHAR(255)
 );
 
-INSERT INTO Content (title, desc, status, content_type, url)
-VALUES (
-    'Introduction to SQL',
-    'A beginner-friendly guide to learning SQL for database management.',
-    'IDEA',
-    'VIDEO',
-    'https://example.com/intro-to-sql'
-);
+--INSERT INTO Content (title, desc, status, content_type, url)
+--VALUES (
+--    'Introduction to SQL',
+--    'A beginner-friendly guide to learning SQL for database management.',
+--    'IDEA',
+--    'VIDEO',
+--    'https://example.com/intro-to-sql'
+--);
